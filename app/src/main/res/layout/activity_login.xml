@@ -1,25 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="br.com.hsacademy.app.LoginActivity">
-
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4" />
+    android:background="#EFEDE6"
+    android:fillViewport="true"
+    tools:context="br.com.hsacademy.app.Login.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
-        android:layout_weight="6"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-    </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:layout_height="72dp"
+            android:src="@drawable/logohsahorizontalpreto"/>
 
-</LinearLayout>
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youtube_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"/>
+
+        <FrameLayout
+            android:id="@+id/form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/login_et_email"
+                    style="@style/TIL_Style">
+
+                    <EditText
+                        style="@style/ItemLogin"
+                        android:ems="10"
+                        android:hint="EMAIL"
+                        android:inputType="textEmailAddress" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/login_et_password"
+                    android:layout_marginTop="8dp"
+                    tools:ignore="UnusedAttribute"
+                    style="@style/TIL_Style">
+
+                    <EditText
+                        style="@style/ItemLogin"
+                        android:ems="10"
+                        android:hint="PASSWORD"
+                        android:inputType="textPassword"
+                        tools:ignore="HardcodedText,PxUsage" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/login_btn_login"
+                    style="@style/ItemLogin"
+                    android:background="#57BB89"
+                    android:text="Login" />
+
+                <Button
+                    android:id="@+id/login_btn_signup"
+                    style="@style/ItemLogin"
+                    android:layout_marginTop="8dp"
+                    android:background="#456CB1"
+                    android:text="Sign Up" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/login_pbar"
+                style="?android:attr/progressBarStyleLarge"
+                android:padding="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#50000000"
+                android:clickable="true"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>
