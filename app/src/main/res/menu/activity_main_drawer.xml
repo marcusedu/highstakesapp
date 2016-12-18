@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Social">
+        <menu>
+            <item
+                android:id="@+id/facebook"
+                android:icon="@drawable/ic_social_facebook"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/twitter"
+                android:icon="@drawable/ic_social_twitter"
+                android:title="Twitter" />
+            <item
+                android:id="@+id/instagram"
+                android:icon="@drawable/ic_social_instagram"
+                android:title="Instagram" />
+            <item
+                android:id="@+id/snap"
+                android:icon="@drawable/ic_social_snap"
+                android:title="Snap" />
+            <item
+                android:id="@+id/youtube"
+                android:icon="@drawable/ic_social_youtube"
+                android:title="You tube" />
+            <item
+                android:id="@+id/site"
+                android:icon="@drawable/ic_web"
+                android:title="Site" />
+        </menu>
+    </item>
+
+    <group>
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Log out" />
+    </group>
+
+</menu>

@@ -21,7 +21,11 @@
         </activity>
         <activity
             android:name=".Signup.SignupActivity"
-            android:parentActivityName=".Login.LoginActivity"/>
+            android:parentActivityName=".Login.LoginActivity" />
+        <activity
+            android:name=".MainActivity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

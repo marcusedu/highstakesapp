@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">High Stakes</string>
     <string name="YouTube_API_KEY">AIzaSyA1fcmQzu0tpQRmHRO7y7C1cKHaO9FQto4</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

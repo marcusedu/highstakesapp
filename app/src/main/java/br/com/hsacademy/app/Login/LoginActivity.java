@@ -29,6 +29,7 @@ import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.hsacademy.app.MainActivity.MainActivity;
 import br.com.hsacademy.app.R;
 import br.com.hsacademy.app.Signup.SignupActivity;
 import br.com.hsacademy.app.model.User;
@@ -111,8 +112,13 @@ public class LoginActivity extends YouTubeBaseActivity implements View.OnClickLi
                 mResponse = gson.fromJson(response, br.com.hsacademy.app.model.Response.class);
                 pBar.setVisibility(View.GONE);
                 if (response.length() > 1 && mResponse.getCode() == 200) {
-//                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    Toast.makeText(getBaseContext(), "Login with " + gson.fromJson(mResponse.getResponse(), User.class).getEmail(), Toast.LENGTH_LONG).show();
+                    User u = gson.fromJson(mResponse.getResponse(), User.class);
+                    Log.d("LoginActivity", u.toString());
+                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                    i.putExtra("USER", u);
+                    startActivity(i);
+                    Toast.makeText(getBaseContext(), "Login with " + u.getEmail(), Toast.LENGTH_LONG).show();
+                    finish();
                 } else {
                     Snackbar.make(getCurrentFocus(), mResponse.getResponse(), 2500).show();
                 }
