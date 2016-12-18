@@ -3,16 +3,16 @@ package br.com.hsacademy.app;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.hsacademy.app.Login.LoginFormValidator;
+import br.com.hsacademy.app.util.FormValidator;
 
 import static org.junit.Assert.assertEquals;
 
-public class LoginFormValidatorTest {
-    LoginFormValidator formValidator;
+public class FormValidatorTest {
+    FormValidator formValidator;
 
     @Before
     public void initLoginFormValidator() {
-        formValidator = new LoginFormValidator();
+        formValidator = new FormValidator();
     }
 
     @Test

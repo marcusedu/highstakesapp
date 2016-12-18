@@ -1,15 +1,13 @@
-package br.com.hsacademy.app.Login;
-
-import android.util.Patterns;
+package br.com.hsacademy.app.util;
 
 import java.util.regex.Pattern;
 
 import static android.support.v4.util.PatternsCompat.EMAIL_ADDRESS;
 
-public class LoginFormValidator {
+public class FormValidator {
     private Pattern lowCase, highCase, numeric, especial;
 
-    public LoginFormValidator(){
+    public FormValidator() {
         lowCase = Pattern.compile("[a-z]");
         highCase = Pattern.compile("[A-Z]");
         numeric = Pattern.compile("\\d");
@@ -18,9 +16,10 @@ public class LoginFormValidator {
 
     public int forcaDaSenha(String senha) {
         int forca = 0;
-        if (senha.length() > 4 && senha.length() < 8) {
+        if (senha.length() < 5) return forca;
+        if (senha.length() < 8) {
             forca += 10;
-        } else if (senha.length() > 8) {
+        } else if (senha.length() >= 8) {
             forca += 25;
         }
         if (lowCase.matcher(senha).find()) {

@@ -32,6 +32,7 @@ import java.util.Map;
 import br.com.hsacademy.app.R;
 import br.com.hsacademy.app.Signup.SignupActivity;
 import br.com.hsacademy.app.model.User;
+import br.com.hsacademy.app.util.FormValidator;
 
 public class LoginActivity extends YouTubeBaseActivity implements View.OnClickListener, YouTubePlayer.OnInitializedListener {
     private TextInputLayout email, password;
@@ -41,7 +42,7 @@ public class LoginActivity extends YouTubeBaseActivity implements View.OnClickLi
     private RequestQueue mRequestQueue;
     private StringRequest loginRequest;
     private YouTubePlayer youTubePlayer;
-    private LoginFormValidator validator = new LoginFormValidator();
+    private FormValidator validator = new FormValidator();
     private final String URL = "http://www.powerapps.com.br/hs_api/index.php";
 
     @Override
