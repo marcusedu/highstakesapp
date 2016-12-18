@@ -1,6 +1,9 @@
 package br.com.hsacademy.app.model;
 
-public class User {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class User implements Parcelable {
 
     /**
      * id : 2
@@ -15,6 +18,9 @@ public class User {
     private String last_name;
     private String email;
     private String create_date;
+
+    public User() {
+    }
 
     public String getId() {
         return id;
@@ -54,5 +60,50 @@ public class User {
 
     public void setCreate_date(String create_date) {
         this.create_date = create_date;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(first_name);
+        dest.writeString(id);
+        dest.writeString(last_name);
+        dest.writeString(email);
+        dest.writeString(create_date);
+    }
+
+    public static final Parcelable.Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel source) {
+            return new User(source);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+
+    private User(Parcel source) {
+        first_name = source.readString();
+        id = source.readString();
+        last_name = source.readString();
+        email = source.readString();
+        create_date = source.readString();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email='" + email + '\'' +
+                ", create_date='" + create_date + '\'' +
+                '}';
     }
 }
