@@ -92,7 +92,7 @@ public class SignupActivity extends AppCompatActivity {
                             finish();
                         }
                     }, 2500);
-                    Snackbar.make(getCurrentFocus(), Html.fromHtml("Welcome to new Life Style with <strong>High Stakes Academy</strong>"), 2500).show();
+                    Snackbar.make(getCurrentFocus(), Html.fromHtml(getString(R.string.welcome)), 2500).show();
                 } else {
                     Snackbar.make(getCurrentFocus(), resp.getResponse(), 2500).show();
                 }
@@ -122,19 +122,19 @@ public class SignupActivity extends AppCompatActivity {
         int validate = 0;
         if (!validator.isValidEmail(email.getEditText().getText().toString())) {
             validate++;
-            email.setError("Email is invalid.");
+            email.setError(getString(R.string.error_email));
         } else email.setErrorEnabled(false);
         if (!validator.isValidPassword(password.getEditText().getText().toString())) {
             validate++;
-            password.setError("Password need more than 4 digits");
+            password.setError(getString(R.string.error_password));
         } else password.setErrorEnabled(false);
         if (first_name.getEditText().getText().toString().isEmpty()) {
             validate++;
-            first_name.setError("This field cannot be empty.");
+            first_name.setError(getString(R.string.field_empty));
         } else first_name.setErrorEnabled(false);
         if (last_name.getEditText().getText().toString().isEmpty()) {
             validate++;
-            last_name.setError("This field cannot be empty.");
+            last_name.setError(getString(R.string.field_empty));
         } else last_name.setErrorEnabled(false);
         return validate == 0;
     }

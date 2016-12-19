@@ -113,11 +113,10 @@ public class LoginActivity extends YouTubeBaseActivity implements View.OnClickLi
                 pBar.setVisibility(View.GONE);
                 if (response.length() > 1 && mResponse.getCode() == 200) {
                     User u = gson.fromJson(mResponse.getResponse(), User.class);
-                    Log.d("LoginActivity", u.toString());
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
                     i.putExtra("USER", u);
                     startActivity(i);
-                    Toast.makeText(getBaseContext(), "Login with " + u.getEmail(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), getString(R.string.toast_loggedin) + u.getEmail(), Toast.LENGTH_LONG).show();
                     finish();
                 } else {
                     Snackbar.make(getCurrentFocus(), mResponse.getResponse(), 2500).show();
@@ -127,7 +126,7 @@ public class LoginActivity extends YouTubeBaseActivity implements View.OnClickLi
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("HS_APP", "Deu ruim mano, te vira." + error.getMessage());
-                Snackbar.make(getCurrentFocus(), "Oops, something is wrong, wait few seconds and try again", 2500).show();
+                Snackbar.make(getCurrentFocus(), R.string.error_service, 2500).show();
                 pBar.setVisibility(View.GONE);
             }
         }) {
@@ -136,7 +135,6 @@ public class LoginActivity extends YouTubeBaseActivity implements View.OnClickLi
                 HashMap<String, String> args = new HashMap<>();
                 args.put("email", email.getEditText().getText().toString());
                 args.put("password", password.getEditText().getText().toString());
-                Log.d("HS_APP", args.toString());
                 return args;
             }
         };
@@ -148,13 +146,13 @@ public class LoginActivity extends YouTubeBaseActivity implements View.OnClickLi
         int invalidosCount = 0;
         if (!validator.isValidEmail(email.getEditText().getText().toString())){
             invalidosCount++;
-            email.setError("Email is invalid!");
+            email.setError(getString(R.string.error_email));
         } else {
             email.setErrorEnabled(false);
         }
         if (!validator.isValidPassword(password.getEditText().getText().toString())){
             invalidosCount++;
-            password.setError("Password is so little");
+            password.setError(getString(R.string.error_password_litle));
         } else {
             password.setErrorEnabled(false);
         }

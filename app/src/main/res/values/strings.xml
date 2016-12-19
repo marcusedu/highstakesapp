@@ -1,10 +1,28 @@
 <resources>
     <string name="app_name">High Stakes</string>
     <string name="YouTube_API_KEY">AIzaSyA1fcmQzu0tpQRmHRO7y7C1cKHaO9FQto4</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">High Stakes Academy</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <!--<string name="action_settings">Settings</string>-->
+
+    <!--SignUpActivity-->
+    <string name="welcome">Welcome to new Life Style with <strong>High Stakes Academy</strong></string>
+    <string name="error_email">Email is invalid.</string>
+    <string name="error_password">Password need more than 4 digits.</string>
+    <string name="field_empty">This field cannot be empty.</string>
+
+    <!--LoginActivity-->
+    <string name="toast_loggedin">Logged in with </string>
+    <string name="error_service">Oops, something is wrong, wait few seconds and try again.</string>
+    <string name="error_password_litle">Password is so little.</string>
+    <string name="email">EMAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="password_strength">Password strength</string>
+    <string name="firt_name">FIRT NAME</string>
+    <string name="last_name">LAST NAME</string>
 </resources>

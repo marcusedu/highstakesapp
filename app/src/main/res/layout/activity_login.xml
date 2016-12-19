@@ -43,7 +43,7 @@
                     <EditText
                         style="@style/ItemLogin"
                         android:ems="10"
-                        android:hint="EMAIL"
+                        android:hint="@string/email"
                         android:inputType="textEmailAddress" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -56,7 +56,7 @@
                     <EditText
                         style="@style/ItemLogin"
                         android:ems="10"
-                        android:hint="PASSWORD"
+                        android:hint="@string/password"
                         android:inputType="textPassword"
                         tools:ignore="HardcodedText,PxUsage" />
                 </android.support.design.widget.TextInputLayout>
@@ -65,14 +65,14 @@
                     android:id="@+id/login_btn_login"
                     style="@style/ItemLogin"
                     android:background="#57BB89"
-                    android:text="Login" />
+                    android:text="@string/login" />
 
                 <Button
                     android:id="@+id/login_btn_signup"
                     style="@style/ItemLogin"
                     android:layout_marginTop="8dp"
                     android:background="#456CB1"
-                    android:text="Sign Up" />
+                    android:text="@string/sign_up" />
             </LinearLayout>
 
             <ProgressBar

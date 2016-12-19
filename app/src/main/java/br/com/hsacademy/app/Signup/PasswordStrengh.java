@@ -18,11 +18,12 @@ public class PasswordStrengh implements TextWatcher {
     }
 
     private String forcaSenha(int i) {
-        if (i <= 30) return "Password weak";
+        if (i <= 30) return "Weak password";
         if (i < 55) return "Password neither weak nor strong";
-        if (i < 80) return "Password strengh";
-        if (i < 100) return "Password very strengh";
-        return "Wow! Password very, very strong";
+        if (i < 80) return "Strong password";
+        if (i < 99) return "Very strong password";
+        if (i > 99) return "Wow! Password very, very strong";
+        return "Password strenght";
     }
 
     @Override
