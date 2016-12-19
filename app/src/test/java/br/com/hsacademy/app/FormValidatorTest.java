@@ -37,7 +37,12 @@ public class FormValidatorTest {
     }
 
     @Test
-    public void deveRetornarSenhaFraca(){
-        assertEquals(20, formValidator.forcaDaSenha("4914"));
+    public void deveRetornarZero(){
+        assertEquals(0, formValidator.forcaDaSenha("4914"));
+    }
+
+    @Test
+    public void deveRetornarCem(){
+        assertEquals(100, formValidator.forcaDaSenha("Mm@1238529"));
     }
 }
